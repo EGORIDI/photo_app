@@ -22,4 +22,9 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  url: <%= ENV['diego-berenguel-photo-app_DATABASE_URL'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: diego-berenguel-photo-app_production
+  username: diego-berenguel-photo-app
+  password: <%= ENV['DIEGO-BERENGUEL-PHOTO-APP_DATABASE_PASSWORD'] %>
